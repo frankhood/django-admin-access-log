@@ -2,21 +2,12 @@
 
 language: python
 
-python:
-  - "3.6"
-
-env:
-  - TOX_ENV=py36-django-32
-  - TOX_ENV=py36-django-22
-
 matrix:
   fast_finish: true
 
 before_install:
-  - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain
   - export PATH="$HOME/.cargo/bin:$PATH"
-  - export CRYPTOGRAPHY_DONT_BUILD_RUST=1
-  - pip install -U pip tox
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -r requirements_test.txt
@@ -26,3 +17,13 @@ script: tox -e $TOX_ENV
 
 after_success:
   - codecov -e TOX_ENV
+
+jobs:
+  include:
+  - python: "3.7"
+    env: TOX_ENV=py38-django-22
+    env: TOX_ENV=py38-django-32
+  - python: "3.8"
+    env: TOX_ENV=py38-django-22
+  - python: "3.8"
+    env: TOX_ENV=py38-django-32
