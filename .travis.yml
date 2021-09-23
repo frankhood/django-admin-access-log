@@ -1,6 +1,6 @@
 # Config file for automatic testing at travis-ci.org
 os: linux
-dist: xenial
+dist: bionic
 language: python
 
 jobs:
@@ -9,6 +9,7 @@ jobs:
   - python: '3.6'
     env: TOX_ENV=py36-django-22,py36-django-32
     before_install:
+    - pip install -U tox pip
     - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
     - export PATH="$HOME/.cargo/bin:$PATH"
   - python: '3.7'
