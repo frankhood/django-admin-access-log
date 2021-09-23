@@ -3,7 +3,6 @@
 language: python
 
 python:
-  - "3.9"
   - "3.6"
 
 env:
@@ -15,6 +14,7 @@ matrix:
 
 before_install:
   - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  - export PATH="$HOME/.cargo/bin:$PATH"
   - pip install -U pip tox
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
