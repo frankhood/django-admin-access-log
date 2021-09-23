@@ -8,7 +8,7 @@ To use Django Admin Access Log in a project, add it to your `INSTALLED_APPS`:
 
     INSTALLED_APPS = (
         ...
-        'django_admin_access_log',
+        'admin_access_log',
         ...
     )
 

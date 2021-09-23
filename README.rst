@@ -33,7 +33,7 @@ Add it to your `INSTALLED_APPS`:
 
     INSTALLED_APPS = (
         ...
-        'django_admin_access_log',
+        'admin_access_log',
         ...
     )
 

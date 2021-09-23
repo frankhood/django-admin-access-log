@@ -27,6 +27,7 @@ pip-log.txt
 .tox
 nosetests.xml
 htmlcov
+db.sqlite3
 
 # Translations
 *.mo
