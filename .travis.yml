@@ -1,23 +1,15 @@
 # Config file for automatic testing at travis-ci.org
+os: linux
+dist: xenial
 language: python
 
-python:
-  - '3.7'
-  - '3.8'
-
-env:
-  - TOX_ENV=py37-django-22,py37-django-32
-  - TOX_ENV=py38-django-22,py38-django-32
-
 jobs:
+  fast_finish: true 
   include:
-  - python: 3.7
+  - python: '3.7'
     env: TOX_ENV=py37-django-22,py37-django-32
-  - python: 3.8
+  - python: '3.8'
     env: TOX_ENV=py38-django-22,py38-django-32
-
-matrix:
-  fast_finish: true
 
 before_install:
   - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
