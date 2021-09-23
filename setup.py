@@ -46,7 +46,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 requirements = open('requirements.txt').readlines()
 
 setup(
-    name='django-admin-access-log',
+    name='admin-access-log',
     version=version,
     description="""This package allows you to log successful and failed login attempts on your django admin.""",
     long_description=readme + '\n\n' + history,
