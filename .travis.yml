@@ -3,15 +3,13 @@
 language: python
 
 jobs:
-  exclude:
+  include:
   - python: "3.7"
-    env: TOX_ENV=py37-django-22
-  - python: "3.7"
-    env: TOX_ENV=py37-django-32
+    env:
+      - TOX_ENV=py37-django-22,py37-django-32
   - python: "3.8"
-    env: TOX_ENV=py38-django-22
-  - python: "3.8"
-    env: TOX_ENV=py38-django-32
+    env:
+      - TOX_ENV=py38-django-22,py38-django-32
 
 matrix:
   fast_finish: true
