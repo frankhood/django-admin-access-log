@@ -12,8 +12,8 @@ jobs:
     env: TOX_ENV=py37-django-22,py37-django-32
   - python: '3.8'
     env: TOX_ENV=py38-django-22,py38-django-32
-
-
+  - python: '3.9'
+    env: TOX_ENV=py39-django-22,py39-django-32
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -r requirements_test.txt
