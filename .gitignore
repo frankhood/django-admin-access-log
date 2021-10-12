@@ -27,7 +27,6 @@ pip-log.txt
 .tox
 nosetests.xml
 htmlcov
-db.sqlite3
 
 # Translations
 *.mo
@@ -46,3 +45,8 @@ output/*/index.html
 
 # Sphinx
 docs/_build
+
+
+.coverage
+.tox
+.python-version

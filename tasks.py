@@ -7,7 +7,7 @@ from invoke import task
 def open_browser(path):
     try:
         from urllib import pathname2url
-    except:
+    except Exception:
         from urllib.request import pathname2url
     webbrowser.open("file://" + pathname2url(os.path.abspath(path)))
 
@@ -100,10 +100,10 @@ def release(c, bumpsize=''):
 
     c.run("bumpversion {bump} --no-input".format(bump=bumpsize))
 
-    import admin_access_log
+    import django_admin_access_log
     c.run("python setup.py sdist bdist_wheel")
     c.run("twine upload dist/*")
 
-    c.run('git tag -a {version} -m "New version: {version}"'.format(version=admin_access_log.__version__))
+    c.run('git tag -a {version} -m "New version: {version}"'.format(version=django_admin_access_log.__version__))
     c.run("git push --tags")
     c.run("git push origin master")

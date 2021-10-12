@@ -21,7 +21,7 @@ def get_version(*file_paths):
     raise RuntimeError('Unable to find version string.')
 
 
-version = get_version("admin_access_log", "__init__.py")
+version = get_version("admin_access_log/__init__.py")
 
 
 if sys.argv[-1] == 'publish':
@@ -46,11 +46,11 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 requirements = open('requirements.txt').readlines()
 
 setup(
-    name='admin-access-log',
+    name='django-admin-access-log',
     version=version,
     description="""This package allows you to log successful and failed login attempts on your django admin.""",
     long_description=readme + '\n\n' + history,
-    author='Frankhood Business Solution',
+    author='FrankHood Business Solutions s.r.l',
     author_email='info@frankhood.it',
     url='https://github.com/frankhood/django-admin-access-log',
     packages=[
@@ -71,5 +71,6 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
 )

@@ -9,17 +9,16 @@ To run this example, follow these instructions:
 1. Navigate to the root directory of your application (same as `manage.py`)
 2. Install the requirements for the package:
 
-        pip install -r requirements.txt
+		pip install -r requirements.txt
 
 3. Make and apply migrations
 
-        python manage.py migrate
+		python manage.py makemigrations
+
+		python manage.py migrate
 
 4. Run the server
 
-        python manage.py runserver
+		python manage.py runserver
 
-5. Access from the browser at `http://127.0.0.1:8000/admin`
-
-
-6. See logs.
+5. Access from the browser at `http://127.0.0.1:8000`
