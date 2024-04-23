@@ -1,7 +1,0 @@
-- r requirements_dev.txt
-
-invoke
-twine
-wheel
-zest.releaser
-bumpversion
